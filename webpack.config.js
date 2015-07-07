@@ -1,6 +1,6 @@
 module.exports = {
     entry:[
-    	'./component/index.js'
+    	'./component/Index.js'
     ],
     output: {
 	    path: __dirname + '/assets/',
@@ -12,7 +12,14 @@ module.exports = {
     },
     module: {
 	    loaders: [
-	    	{ test: /\.jsx?$/, loaders: ['jsx?harmony']}
+	    	{ 
+                test: /\.jsx?$/, 
+                loaders: ['jsx?harmony']
+            },
+            {
+                test: /\.(css)$/,
+                loader: 'style-loader!css-loader'
+            }
 	    ]
 	}
 };
